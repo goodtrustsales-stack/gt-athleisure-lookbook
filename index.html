@@ -4,28 +4,32 @@
   <meta charset="UTF-8" />
   <title>Redirecting...</title>
 
-  <!-- GA4 -->
+  <!-- Google Analytics 4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-N1948D8RYG"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
 
-    gtag('config', 'G-N1948D8RYG');
+    gtag('config', 'G-N1948D8RYG', {
+      transport_type: 'beacon',
+      send_page_view: true
+    });
 
-    // 🔴 클릭 이벤트 강제 전송
+    // Track the email banner click as an event (this page load = click)
     gtag('event', 'email_banner_click', {
       event_category: 'email',
       event_label: '2025_SS_ODM_Notion'
     });
 
-    // GA 전송 시간 확보 후 이동
+    // Redirect after enough time for GA to send
     setTimeout(function () {
       window.location.href =
         "https://www.notion.so/GOODTRUST-2025-26-S-S-ODM-Vol-1-23359ceee8a680679a3ce33f79b1a48c";
-    }, 2500); // 🔑 2.5초
+    }, 5000); // 5 seconds
   </script>
 </head>
+
 <body>
   Redirecting...
 </body>
