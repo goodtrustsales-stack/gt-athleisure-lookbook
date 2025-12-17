@@ -1,30 +1,46 @@
-<!DOCTYPE html>
-<html lang="ko">
+<!doctype html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Redirecting...</title>
 
-  <!-- Google tag (GA4) -->
+  <!-- Google Analytics 4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-N1948D8RYG"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag(){ dataLayer.push(arguments); }
+
     gtag('js', new Date());
 
-    gtag('config', 'G-N1948D8RYG');
-  </script>
+    gtag('config', 'G-N1948D8RYG', {
+      transport_type: 'beacon',
+      debug_mode: true
+    });
 
-  <!-- Redirect -->
-  <script>
-    // GA 태그가 로드될 시간을 충분히 준 뒤 리디렉트
-    setTimeout(function () {
-      window.location.href =
-        "https://www.notion.so/Performance-Golf-Wear-23359ceee8a681d39c38f275a424c7a4";
-    }, 1200); // ★ 1.2초 (중요)
+    var DESTINATION_URL =
+      "https://www.notion.so/Performance-Golf-Wear-23359ceee8a681d39c38f275a424c7a4";
+
+    function redirect() {
+      window.location.replace(DESTINATION_URL);
+    }
+
+    gtag('event', 'email_banner_click', {
+      event_category: 'email',
+      event_label: 'footer_banner',
+      destination: DESTINATION_URL,
+      event_callback: redirect
+    });
+
+    setTimeout(redirect, 2500);
   </script>
 </head>
 
 <body>
   Redirecting...
+  <noscript>
+    <meta http-equiv="refresh"
+          content="0;url=https://www.notion.so/Performance-Golf-Wear-23359ceee8a681d39c38f275a424c7a4">
+  </noscript>
 </body>
 </html>
