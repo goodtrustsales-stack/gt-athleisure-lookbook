@@ -1,46 +1,31 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Redirecting...</title>
+  <title>Good Trust ODM</title>
 
   <!-- Google Analytics 4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-N1948D8RYG"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){ dataLayer.push(arguments); }
-
+    function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
 
     gtag('config', 'G-N1948D8RYG', {
-      transport_type: 'beacon',
-      debug_mode: true
+      page_path: window.location.pathname
     });
-
-    var DESTINATION_URL =
-      "https://www.notion.so/Performance-Golf-Wear-23359ceee8a681d39c38f275a424c7a4";
-
-    function redirect() {
-      window.location.replace(DESTINATION_URL);
-    }
-
-    gtag('event', 'email_banner_click', {
-      event_category: 'email',
-      event_label: 'footer_banner',
-      destination: DESTINATION_URL,
-      event_callback: redirect
-    });
-
-    setTimeout(redirect, 2500);
   </script>
-</head>
 
+  <style>
+    html, body { margin:0; padding:0; height:100%; }
+    iframe { width:100%; height:100vh; border:0; }
+  </style>
+</head>
 <body>
-  Redirecting...
-  <noscript>
-    <meta http-equiv="refresh"
-          content="0;url=https://www.notion.so/Performance-Golf-Wear-23359ceee8a681d39c38f275a424c7a4">
-  </noscript>
+  <iframe
+    src="https://www.notion.so/embed/23359ceee8a681d39c38f275a424c7a4"
+    allowfullscreen
+  ></iframe>
 </body>
 </html>
